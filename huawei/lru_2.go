@@ -1,11 +1,8 @@
 package huawei
 
-type ILinkList interface {
+type LinkList interface {
 	Get(index int) *DoubleListNode
-	AddAtHead(val *DoubleListNode)
 	AddAtTail(val *DoubleListNode)
-	AddAtIndex(index int, val *DoubleListNode)
-	DeleteAtIndex(index int)
 	Delete(val *DoubleListNode)
 	MoveToBack(val *DoubleListNode)
 }
@@ -14,7 +11,7 @@ type LRU struct {
 	capacity int
 	size     int
 	m        map[int]*DoubleListNode
-	l        ILinkList
+	l        LinkList
 }
 
 func NewLRU(capacity int) *LRU {

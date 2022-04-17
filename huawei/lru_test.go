@@ -25,3 +25,29 @@ func TestLRU(t *testing.T) {
 	}
 
 }
+
+func BenchmarkLRUWithMyList(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		s := NewLRU(2)
+		s.Set(1, 1)
+		s.Set(2, 2)
+		s.Get(1)
+		s.Set(4, 4)
+		s.Get(1)
+		s.Get(3)
+		s.Get(4)
+	}
+}
+
+func BenchmarkLRUWithContainer(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		s := Constructor(2)
+		s.Set(1, 1)
+		s.Set(2, 2)
+		s.Get(1)
+		s.Set(4, 4)
+		s.Get(1)
+		s.Get(3)
+		s.Get(4)
+	}
+}
