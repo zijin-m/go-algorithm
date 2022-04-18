@@ -1,6 +1,6 @@
 package huawei
 
-func threeOrders(root *TreeNode) [][]int {
+func ThreeOrdersv2(root *TreeNode) [][]int {
 	// write code here
 	return [][]int{
 		preorder(root),
