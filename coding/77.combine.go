@@ -11,6 +11,9 @@ func Combine(n int, k int) [][]int {
 }
 
 func backtracing(n, k, start int) {
+	if len(path)+n-start+1 < k {
+		return
+	}
 	if len(path) == k {
 		// ! 重新创建切片，避免使用同样的地址，造成值被覆盖
 		temp := make([]int, k)
