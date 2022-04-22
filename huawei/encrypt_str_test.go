@@ -31,10 +31,10 @@ func TestEncryptStr(t *testing.T) {
 		{
 			name: "case1",
 			args: args{
-				str: `pasword___a123#__#456#________#78__timeout__##_100`,
+				str: `password_a123#__#456#________#78__timeout__##_100`,
 				k:   1,
 			},
-			want: "password_******__timeout_100",
+			want: "password_******__timeout__##_100",
 		},
 	}
 	for _, tt := range tests {
